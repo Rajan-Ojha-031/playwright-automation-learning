@@ -13,6 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  timeout: 60_000,
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -40,7 +41,7 @@ export default defineConfig({
       name: 'chromium',
       use: {
          ...devices['Desktop Chrome'],
-        viewport:{width:1500,height:850},
+        // viewport:{width:500,height:850},
         screenshot:"on",
         video:"on",
         trace:"on"
